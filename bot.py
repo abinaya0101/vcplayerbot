@@ -1,5 +1,4 @@
 # Examined dashezup's vcbot repo for make this working only for contacts and userbot!
-# Infinity BOTs <https://t.me/Infinity_BOTs>
 
 import os
 from pytgcalls import GroupCall
@@ -55,7 +54,7 @@ def get_arg(message):
 # start message
 @app.on_message(filters.command('start'))
 async def start(client, message):
-    await message.reply("Heya, I'm JEVC Player 🎵\n\nRepo > https://github.com/ImJanindu/vcplayerbot",
+    await message.reply("Hallo saya Enca 🎵",
                         disable_web_page_preview=True)
 
 # ping checker
@@ -74,7 +73,7 @@ async def song(client, message):
     message.from_user["id"]
     args = get_arg(message) + " " + "song"
     if args.startswith(" "):
-        await message.reply("What's the song you want 🧐")
+        await message.reply("Lagu Apa Yang Kamu Mau 🧐")
         return ""
     pak = await message.reply('Downloading...')
     try:
@@ -108,7 +107,7 @@ async def download_song(url):
 @app.on_message(filters.command("deezer") & self_or_contact_filter)
 async def deezer(_, message):
     if len(message.command) < 2:
-        await message.reply_text("What's the song you want 🧐")
+        await message.reply_text("Lagu Apa Yang Kamu Mau 🧐")
         return
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
@@ -156,7 +155,7 @@ async def play_track(client, message):
             await message.reply('Group Call doesnt exist')
             return
         VOICE_CHATS[message.chat.id] = group_call
-    await a.edit(f'▶️ Playing **{audio.title}** here by JEVC BOT...')
+    await a.edit(f'▶️ Playing **{audio.title}** here by Enca bot..')
 
 
 @app.on_message(filters.command('stopvc') & self_or_contact_filter)
@@ -196,7 +195,7 @@ async def leave_voice_chat(client, message):
     await message.reply('Left Voice Chat ✅')
 
 app.start()
-print('>>> JEVC USERBOT STARTED')
+print('>>> Enca USERBOT STARTED')
 idle()
 app.stop()
-print('\n>>> JEVC USERBOT STOPPED')
+print('\n>>> Enca USERBOT STOPPED')
